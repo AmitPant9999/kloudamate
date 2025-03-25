@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+   
+    
+    padding: 20px;
+}
+
+.panel {
+    display: grid;
+   
+    border-radius: 10px;
+    grid-template-rows: auto;
+}
+
+.single-series {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.multi-series {
+    
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+}
+
+.stat {
+   
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.value {
+    font-size: 24px;
+    color: #007BFF;
+}
+
+/* Font scaling */
+.panel .stat {
+    font-size: 1vw; /* Scale based on the width of the viewport */
+}
+
+.panel .label {
+    font-size: calc(12px + .1vw); /* Scaled label size */
+   
+}
+
+.panel .value {
+    font-size: calc(16px + 1vw); /* Scaled value size */
+    
+}
+
+@media (max-width: 800px) {
+    .multi-series {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+ 
+@media (max-width: 500px) {
+    .multi-series {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 00px) {
+    .multi-series {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
